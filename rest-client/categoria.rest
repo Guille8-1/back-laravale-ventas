@@ -1,0 +1,13 @@
+GET http://127.0.0.1:8000/api/categoria
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODE5ODgyNSwiZXhwIjoxNjM4MjAyNDI1LCJuYmYiOjE2MzgxOTg4MjUsImp0aSI6IlBISzl2S2NGczYxR01qdW8iLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Hk9pciDzAJn04jS3k-3brsu4mpGsjWwUzesOsnzx0Zk
+
+###
+POST http://127.0.0.1:8000/api/categoria
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODE5ODgyNSwiZXhwIjoxNjM4MjAyNDI1LCJuYmYiOjE2MzgxOTg4MjUsImp0aSI6IlBISzl2S2NGczYxR01qdW8iLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Hk9pciDzAJn04jS3k-3brsu4mpGsjWwUzesOsnzx0Zk
+
+{
+    "nombre": "Ropa",
+}

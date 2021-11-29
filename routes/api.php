@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\categoriaController;
+use App\Http\Controllers\clienteController;
+use App\Http\Controllers\pepdidoController;
+use App\Http\Controllers\productoController;
+use App\Http\Controllers\subcategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +35,12 @@ Route::group([
     Route::post('logout', [AuthController::class, "logout"]);
     Route::post('refresh', [AuthController::class, "refresh"]);
     Route::post('me', [AuthController::class, "me"]);
+});
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::apiResource("categoria",categoriaController::class);
+    Route::apiResource("subcategoria",subcategoriaController::class);
+    Route::apiResource("producto",productoController::class);
+    Route::apiResource("cliente",clienteController::class);
+    Route::apiResource("pedido",pepdidoController::class);
 });
