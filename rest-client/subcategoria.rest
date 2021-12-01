@@ -1,0 +1,15 @@
+GET http://127.0.0.1:8000/api/subcategoria
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODI4NTEzNCwiZXhwIjoxNjM4Mjg4NzM0LCJuYmYiOjE2MzgyODUxMzQsImp0aSI6IjVaREJVS2tXMHRWNWhaTTYiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oKfVNVqC4KlViNxEWkExwbMoBMqC6BO_2-gP1-u8gYo
+
+###
+
+POST http://127.0.0.1:8000/api/subcategoria
+Accept: application/json
+Content-Type: application/json
+Authorization: BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODMwODU2OCwiZXhwIjoxNjM4MzEyMTY4LCJuYmYiOjE2MzgzMDg1NjgsImp0aSI6IlEwQVdrOU04RDVtMTFUdW4iLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.rqEVzMxwIo87ZpGFeceQNHLVhJd_2v0MMFFALFQ1hWE
+
+{
+    "nombre": "Zapato",
+    "categoria_id": 2
+}

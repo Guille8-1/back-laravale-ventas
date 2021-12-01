@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
-class categoriaController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,7 @@ class categoriaController extends Controller
     public function index()
     {
         $lista_categorias = Categoria::all();
-       return response()->json($lista_categorias);
+        return response()->json($lista_categorias);
     }
 
     /**
@@ -26,18 +28,18 @@ class categoriaController extends Controller
      */
     public function store(Request $request)
     {
+        // validar
         $request->validate([
-            "nombre"=>"required|unique:categorias|min:3|max:50",
-            "detalle"=> "string"
+            "nombre" => "required|unique:categorias|min:3|max:50",
+            "detalle" => "string"
         ]);
+        // guardar
+        $categoria = new Categoria;
+        $categoria->nombre = $request->nombre;
+        $categoria->detalle = $request->detalle;
+        $categoria->save();
 
-       $categoria = new categoria;
-       $categoria->nombre = $request->nombre;
-       $categoria->detalle = $request->detalle;
-       $categoria->save();
-
-       return response()->json(["mensaje"=> "Categoria Registrada","data"=> $categoria], 201);
-       
+        return response()->json(["mensaje" => "Categoria Registrada", "data" => $categoria], 201);
     }
 
     /**
@@ -48,7 +50,18 @@ class categoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        /*$categoria = Categoria::find($id);
+        $categoria->subcategorias;
+        return $categoria;
+        */
+        $categoria = DB::table("categorias")->select("nombre")->find($id);
+
+        $subcategorias = DB::table("subcategorias")
+                        ->where("subcategorias.categoria_id", $id)
+                        ->select("id", "nombre")
+                        ->get();
+        $categoria->sub_categorias = $subcategorias;
+        return $categoria;
     }
 
     /**
@@ -60,7 +73,22 @@ class categoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mi_id = $id;
+        // validar
+        $request->validate([
+            "nombre" => "required|min:3|max:50|unique:categorias,nombre,$mi_id",
+            // 'nombre' => ['required', 'min:3', 'max:50', Rule::unique('categorias')->ignore($id, 'mi_id')],
+            "detalle" => "string"
+        ]);
+
+        $categoria = Categoria::find($id);
+        // modificar
+        $categoria->nombre = $request->nombre;
+        $categoria->detalle = $request->detalle;
+        $categoria->save();
+
+        return response()->json(["mensaje" => "Categoria Modificada", "data" => $categoria], 201);
+  
     }
 
     /**

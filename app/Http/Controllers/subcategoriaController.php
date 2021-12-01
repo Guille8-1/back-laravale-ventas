@@ -26,7 +26,18 @@ class subcategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "nombre" => "required|unique:subcategorias|min:3|max:50",
+            "categoria_id"=> "required"
+        ]);
+
+        //guardar
+        $subcat = new Subcategoria();
+        $subcat->nombre =$request->nombre;
+        $subcat->categoria_id = $request->categoria_id;
+        $subcat->save();
+        return response()->json(["mensaje"=> "categoria Registrada", "data"=>$subcat], 201);
+        
     }
 
     /**
