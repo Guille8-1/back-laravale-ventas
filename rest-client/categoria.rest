@@ -1,6 +1,6 @@
 GET http://127.0.0.1:8000/api/categoria
 Accept: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODI4NTEzNCwiZXhwIjoxNjM4Mjg4NzM0LCJuYmYiOjE2MzgyODUxMzQsImp0aSI6IjVaREJVS2tXMHRWNWhaTTYiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oKfVNVqC4KlViNxEWkExwbMoBMqC6BO_2-gP1-u8gYo
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODMyNDEwNSwiZXhwIjoxNjM4MzI3NzA1LCJuYmYiOjE2MzgzMjQxMDUsImp0aSI6IjhZdk1VeE82NVJEcld4RlIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.eZyBut85vJ3zVAJZfRiG-TnWG9oybdOE0OZ9uCqRcls
 
 ###
 POST http://127.0.0.1:8000/api/categoria
@@ -22,6 +22,6 @@ Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODMyNDEwNSwiZXhwIjoxNjM4MzI3NzA1LCJuYmYiOjE2MzgzMjQxMDUsImp0aSI6IjhZdk1VeE82NVJEcld4RlIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.eZyBut85vJ3zVAJZfRiG-TnWG9oybdOE0OZ9uCqRcls
 
 {
-    "nombre": "Ropa para damas",
+    "nombre": "Ropa para damass",
     "detalle": "prueba"
 }
